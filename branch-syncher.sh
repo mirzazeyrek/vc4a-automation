@@ -9,18 +9,18 @@ echo Automatically merging commit $LAST_COMMIT from $CURRENT_BRANCH rippling to 
 
 case $CURRENT_BRANCH in
 production)
-  git checkout master ＆＆ git merge $CURRENT_BRANCH
-  git checkout staging ＆＆ git merge $CURRENT_BRANCH
-  git checkout development ＆＆ git merge $CURRENT_BRANCH
+  git checkout master && git merge $CURRENT_BRANCH
+  git checkout staging && git merge $CURRENT_BRANCH
+  git checkout development && git merge $CURRENT_BRANCH
   git checkout $CURRENT_BRANCH
   ;;
 master)
-  git checkout staging ＆＆ git merge $CURRENT_BRANCH
-  git checkout development ＆＆ git merge $CURRENT_BRANCH
+  git checkout staging && git merge $CURRENT_BRANCH
+  git checkout development && git merge $CURRENT_BRANCH
   git checkout $CURRENT_BRANCH
   ;;
 staging)
-  git checkout development ＆＆ git merge $CURRENT_BRANCH
+  git checkout development && git merge $CURRENT_BRANCH
   git checkout $CURRENT_BRANCH
   ;;
 esac
