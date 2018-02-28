@@ -6,7 +6,7 @@
 whoami
 pwd
 
-CURRENT_BRANCH=$(git branch)
+CURRENT_BRANCH=$1
 LAST_COMMIT=$(git rev-list -1 HEAD)
 
 git remote set-url origin git@github.com:billz/mu-plugins.git
