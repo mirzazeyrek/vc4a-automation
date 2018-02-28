@@ -9,7 +9,7 @@ pwd
 CURRENT_BRANCH=$1
 LAST_COMMIT=$(git rev-list -1 HEAD)
 
-git remote set-url origin git@github.com:billz/mu-plugins.git
+git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 git checkout -f $CURRENT_BRANCH
 echo "Fetching all"
 git fetch --all
