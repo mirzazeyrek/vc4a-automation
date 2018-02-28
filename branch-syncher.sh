@@ -9,7 +9,8 @@ pwd
 CURRENT_BRANCH=$1
 LAST_COMMIT=$(git rev-list -1 HEAD)
 REPOSITORY_URL=$2
-REPOSITORY_NAME=${REPOSITORY_URL:20}
+# stripping https://github.com/
+REPOSITORY_NAME=${REPOSITORY_URL:19}
 
 git remote set-url origin git@github.com:${REPOSITORY_NAME}
 git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
