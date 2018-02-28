@@ -34,7 +34,7 @@ master)
   ( git checkout -f staging && git pull origin staging && git merge --no-ff $CURRENT_BRANCH -m "auto merge with $CURRENT_BRANCH" && git push origin staging ) || ( echo "auto merge failed." && exit 1 )
   ;;
 staging)
-  ( git checkout -f development && git pull origin development && git --no-ff merge $CURRENT_BRANCH -m "auto merge with $CURRENT_BRANCH" && git push origin development ) || ( echo "auto merge failed." && exit 1 )
+  ( git checkout -f development && git pull origin development && git merge --no-ff $CURRENT_BRANCH -m "auto merge with $CURRENT_BRANCH" && git push origin development ) || ( echo "auto merge failed." && exit 1 )
   ;;
 esac
 
