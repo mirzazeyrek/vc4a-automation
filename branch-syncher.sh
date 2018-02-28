@@ -6,11 +6,13 @@
 whoami
 pwd
 
-CURRENT_BRANCH=$1
+CURRENT_BRANCH=$(git branch)
 LAST_COMMIT=$(git rev-list -1 HEAD)
 
-echo Automatically merging commit $LAST_COMMIT from $CURRENT_BRANCH rippling to sub-branches
+echo "Fetching all"
+git fetch --all
 
+echo "Automatically merging commit $LAST_COMMIT from $CURRENT_BRANCH rippling to sub-branches"
 case $CURRENT_BRANCH in
 production)
   git checkout master && git merge $CURRENT_BRANCH -m "auto merge with $CURRENT_BRANCH" || ( echo "auto merge failed." && exit 1 )
