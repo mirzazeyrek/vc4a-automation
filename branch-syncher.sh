@@ -2,6 +2,10 @@
 # Automatically merge the last commit through the following branches:
 # production -> master -> staging -> development
 
+# always good to know where are we and who are we!
+whoami
+pwd
+
 CURRENT_BRANCH=$1
 LAST_COMMIT=$(git rev-list -1 HEAD)
 
