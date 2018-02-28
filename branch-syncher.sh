@@ -2,7 +2,7 @@
 # Automatically merge the last commit through the following branches:
 # production -> master -> staging -> development
 
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+CURRENT_BRANCH=$1
 LAST_COMMIT=$(git rev-list -1 HEAD)
 
 echo Automatically merging commit $LAST_COMMIT from $CURRENT_BRANCH rippling to sub-branches
