@@ -10,10 +10,10 @@ CURRENT_BRANCH=$1
 LAST_COMMIT=$(git rev-list -1 HEAD)
 
 git remote set-url origin git@github.com:billz/mu-plugins.git
-git checkout $CURRENT_BRANCH
+git checkout -f $CURRENT_BRANCH
 echo "Fetching all"
 git fetch --all
-
+git pull
 echo "Automatically merging commit $LAST_COMMIT from $CURRENT_BRANCH rippling to sub-branches"
 case $CURRENT_BRANCH in
 production)
